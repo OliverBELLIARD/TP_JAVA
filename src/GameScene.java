@@ -5,35 +5,28 @@ import javafx.scene.SceneAntialiasing;
 import javafx.scene.paint.Paint;
 
 public class GameScene extends Scene {
-    Camera cam;
 
-    public GameScene(Parent parent, Camera cam) {
+    public GameScene(Parent parent) {
         super(parent);
-        this.cam = cam;
     }
 
-    public GameScene(Parent parent, double v, double v1, Camera cam) {
+    public GameScene(Parent parent, double v, double v1) {
         super(parent, v, v1);
-        this.cam = cam;
     }
 
-    public GameScene(Parent parent, Paint paint, Camera cam) {
+    public GameScene(Parent parent, Paint paint) {
         super(parent, paint);
-        this.cam = cam;
     }
 
-    public GameScene(Parent parent, double v, double v1, Paint paint, Camera cam) {
+    public GameScene(Parent parent, double v, double v1, Paint paint) {
         super(parent, v, v1, paint);
-        this.cam = cam;
     }
 
-    public GameScene(Parent parent, double v, double v1, boolean b, Camera cam) {
+    public GameScene(Parent parent, double v, double v1, boolean b) {
         super(parent, v, v1, b);
-        this.cam = cam;
     }
 
-    public GameScene(Parent parent, double v, double v1, boolean b, SceneAntialiasing sceneAntialiasing, Camera cam) {
+    public GameScene(Parent parent, double v, double v1, boolean b, SceneAntialiasing sceneAntialiasing) {
         super(parent, v, v1, b, sceneAntialiasing);
-        this.cam = cam;
     }
 }

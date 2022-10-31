@@ -1,27 +1,17 @@
 public class Camera {
-    private Integer x, y, width, height;
+    private double x, y;
 
-    public Camera(Integer x, Integer y, Integer width, Integer height) {
+    public Camera(double x, double y) {
         this.x = x;
         this.y = y;
-        this.width = width;
-        this.height = height;
     }
 
-    public Integer getX() {
+    public double getX() {
         return x;
     }
 
-    public Integer getY() {
+    public double getY() {
         return y;
-    }
-
-    public Integer getWidth() {
-        return width;
-    }
-
-    public Integer getHeight() {
-        return height;
     }
 
     public void setX(Integer x) {
@@ -30,14 +20,6 @@ public class Camera {
 
     public void setY(Integer y) {
         this.y = y;
-    }
-
-    public void setWidth(Integer width) {
-        this.width = width;
-    }
-
-    public void setHeight(Integer height) {
-        this.height = height;
     }
 
     @Override
