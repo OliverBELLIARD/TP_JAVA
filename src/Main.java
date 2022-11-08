@@ -25,11 +25,18 @@ public class Main extends Application {
         primaryStage.setScene(gameScene);
 
         // Hero
-        hero = new Hero(200,300,100,82,0,10,"file:./img/heros.png");
+        hero = new Hero(200,300,
+                100,82,
+                0,10,"file:./img/heros.png");
 
-        StaticThing background1 = new StaticThing(100,100,100,100,
+        // Background
+        StaticThing backgroundLeft = new StaticThing(100,100,0,0,
+                "img/desert.png");
+        StaticThing backgroundRight = new StaticThing(100,100,backgroundLeft.getImgWidth(),0,
                 "img/desert.png");
 
+        root.getChildren().add(backgroundLeft.getSprite());
+        root.getChildren().add(backgroundRight.getSprite());
         root.getChildren().add(hero.getSprite());
         primaryStage.show();
         entitiesAnimator.start();

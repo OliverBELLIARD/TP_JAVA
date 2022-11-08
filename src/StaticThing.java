@@ -3,15 +3,15 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class StaticThing {
-    private double sizeX, sizeY, posX, posY, imgWidth, imgHeight;
+    private double sizeX, sizeY, x, y, imgWidth, imgHeight;
     private ImageView sprite;
     private Image spriteSheet;
 
-    public StaticThing(double sizeX, double sizeY, double posX, double posY, String fileName) {
+    public StaticThing(double sizeX, double sizeY, double x, double y, String fileName) {
         this.sizeX = sizeX;
         this.sizeY = sizeY;
-        this.posX = posX;
-        this.posY = posY;
+        this.x = x;
+        this.y = y;
 
         this.spriteSheet = new Image("file:./"+fileName);
 
@@ -19,9 +19,9 @@ public class StaticThing {
         this.imgHeight = spriteSheet.getHeight();
 
         this.sprite = new ImageView(spriteSheet);
-        sprite.setViewport(new Rectangle2D(20,0,65,100));
-        sprite.setX(this.posX);
-        sprite.setY(this.posY);
+        sprite.setViewport(new Rectangle2D(0,0,(int)spriteSheet.getWidth(),(int)spriteSheet.getHeight()));
+        sprite.setX(this.x);
+        sprite.setY(this.y);
     }
 
     public double getSizeX() {
@@ -40,25 +40,33 @@ public class StaticThing {
         this.sizeY = sizeY;
     }
 
-    public double getPosX() {
-        return posX;
+    public double getX() {
+        return x;
     }
 
-    public void setPosX(double posX) {
-        this.posX = posX;
+    public void setX(double posX) {
+        this.x = posX;
     }
 
-    public double getPosY() {
-        return posY;
+    public double getY() {
+        return y;
     }
 
-    public void setPosY(double posY) {
-        this.posY = posY;
+    public void setY(double posY) {
+        this.y = posY;
     }
 
-    public ImageView getImageView() {
+    public ImageView getSprite() {
         return sprite;
     }
 
     public Image getImage() { return spriteSheet; }
+
+    public double getImgWidth() {
+        return imgWidth;
+    }
+
+    public double getImgHeight() {
+        return imgHeight;
+    }
 }
