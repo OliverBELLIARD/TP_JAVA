@@ -1,11 +1,7 @@
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
-import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
 import javafx.scene.ParallelCamera;
-import javafx.scene.Scene;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -15,7 +11,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        mainCamera = new Camera(0,0);
+        mainCamera = new Camera(100,100);
 
         primaryStage.setTitle("Hello world");
         Group root = new Group();
@@ -39,6 +35,7 @@ public class Main extends Application {
         root.getChildren().add(backgroundRight.getSprite());
         root.getChildren().add(hero.getSprite());
         primaryStage.show();
+        //gameScene.render();
         entitiesAnimator.start();
     }
 

@@ -1,10 +1,10 @@
-import javafx.scene.Camera;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.SceneAntialiasing;
 import javafx.scene.paint.Paint;
 
 public class GameScene extends Scene {
+    StaticThing hitPoints;
 
     public GameScene(Parent parent) {
         super(parent);
@@ -28,5 +28,9 @@ public class GameScene extends Scene {
 
     public GameScene(Parent parent, double v, double v1, boolean b, SceneAntialiasing sceneAntialiasing) {
         super(parent, v, v1, b, sceneAntialiasing);
+    }
+
+    public void render() {
+        this.getRoot();
     }
 }
