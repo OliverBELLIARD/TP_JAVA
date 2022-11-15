@@ -46,6 +46,7 @@ public class StaticThing {
 
     public void setX(double posX) {
         this.x = posX;
+        sprite.setX(x);
     }
 
     public double getY() {
@@ -54,6 +55,7 @@ public class StaticThing {
 
     public void setY(double posY) {
         this.y = posY;
+        sprite.setY(y);
     }
 
     public ImageView getSprite() {

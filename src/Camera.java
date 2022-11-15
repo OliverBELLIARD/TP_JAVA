@@ -1,7 +1,7 @@
 public class Camera {
     private double x, y;
 
-    public Camera(double x, double y) {
+    public Camera(int x, int y) {
         this.x = x;
         this.y = y;
     }
@@ -14,9 +14,7 @@ public class Camera {
         return y;
     }
 
-    public void setX(Integer x) {
-        this.x = x;
-    }
+    public void setX(Integer x) { this.x = x; }
 
     public void setY(Integer y) {
         this.y = y;
@@ -24,6 +22,6 @@ public class Camera {
 
     @Override
     public String toString() {
-        return this.x+","+this.y;
+        return x+","+y;
     }
 }
