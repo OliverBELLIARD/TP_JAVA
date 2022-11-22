@@ -2,20 +2,19 @@ import javafx.geometry.Rectangle2D;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-public class Hero {
-    private double x, y,
-            spriteHeight, spriteWidth,
+public class Hero extends Entity {
+    private double spriteHeight, spriteWidth,
             spriteOffsetY, spriteOffsetX;
     private String file;
     private Image spriteSheet;
     private ImageView sprite;
 
-    public Hero(double x, double y,
+    public Hero(int x, int y,
                 double spriteHeight, double spriteWidth,
                 double spriteOffsetY, double spriteOffsetX,
                 String file) {
-        this.x = x;
-        this.y = y;
+        super(x, y, spriteWidth, spriteHeight, 100, 20, 1);
+
         this.spriteHeight = spriteHeight;
         this.spriteWidth = spriteWidth;
         this.spriteOffsetY = spriteOffsetY;
@@ -29,27 +28,14 @@ public class Hero {
         sprite.setY(y);
     }
 
-    public void updateImageViewInScene(Camera cam, long time) {
-        this.sprite.setX(this.x - cam.getX());
-        this.sprite.setY(this.y - cam.getY());
+    public void update(Camera cam, long time) {
+        this.sprite.setX(this.getX() - cam.getX());
+        this.sprite.setY(this.getY() - cam.getY());
         int index = (int)(time / 1000000L / 150L % 6L);
-        this.sprite.setViewport(new Rectangle2D((double)(spriteOffsetX + spriteWidth * index), spriteOffsetY, spriteWidth, spriteHeight));
-    }
+        this.sprite.setViewport(new Rectangle2D((double)(spriteOffsetX + spriteWidth * index),
+                spriteOffsetY, spriteWidth, spriteHeight));
 
-    public double getX() {
-        return x;
-    }
-
-    public void setX(double x) {
-        this.x = x;
-    }
-
-    public double getY() {
-        return y;
-    }
-
-    public void setY(double y) {
-        this.y = y;
+        this.setX(this.getX()+0.1);
     }
 
     public double getSpriteHeight() {
@@ -106,5 +92,9 @@ public class Hero {
 
     public void setSprite(ImageView sprite) {
         this.sprite = sprite;
+    }
+
+    public void jump() {
+
     }
 }

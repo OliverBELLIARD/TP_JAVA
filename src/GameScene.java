@@ -62,6 +62,13 @@ public class GameScene extends Scene {
 
         render();
         entitiesAnimator.start();
+
+        ///////////////////////////////////////////////////////////:
+        // INPUTS
+        /////////////////////////////////////////////////////////
+        this.setOnKeyPressed((event)->{
+            System.out.println("jump");
+        });
     }
 
     public void render() {
@@ -76,8 +83,13 @@ public class GameScene extends Scene {
 
     AnimationTimer entitiesAnimator = new AnimationTimer() {
         @Override
-        public void handle(long l) {
-            hero.updateImageViewInScene(mainCamera,l);
+        public void handle(long t) {
+            hero.update(mainCamera,t);
         }
     };
+
+    public void update(long t) {
+
+    }
+
 }
